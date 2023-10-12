@@ -1,21 +1,19 @@
 package com.example.tes_macro
 
-import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Bundle
 import android.text.SpannableString
 import android.text.style.UnderlineSpan
 import android.widget.ImageView
 import android.widget.TextView
 
-class Artikel : AppCompatActivity() {
-
+class Artikell : AppCompatActivity() {
     private lateinit var textViewForYou: TextView
     private lateinit var textViewRecommendation: TextView
     private lateinit var textViewTranding: TextView
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_artikel)
+        setContentView(R.layout.activity_artikell)
 
         textViewForYou = findViewById(R.id.textViewForYou)
         textViewRecommendation = findViewById(R.id.textViewRecommendation)
@@ -35,15 +33,15 @@ class Artikel : AppCompatActivity() {
             updateUnderline(textViewTranding)
             resetUnderline(textViewForYou, textViewRecommendation)
         }
+        data class Artikell(val imageRes: Int, val title: String, val publisher: String, val date: String)
 
-        // Set data for Artikel
         val artikelList = listOf(
-            ArtikelData(R.drawable.artike1, "Pentingnya Pendidikan Bagi Masa Depan", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
-            ArtikelData(R.drawable.artikel2, "8 Cara Membuat Katalog Online untuk Tingkat Bisnis", "Oleh : Redaksi Jagoan Hosting", "15 Agustus 2023"),
-            ArtikelData(R.drawable.artikel4, "Para Penerima Beasiswa Amanah Bangun Desa Telah Memasuki Tahap Implementasi Proyek", "Oleh : Kompasiana", "15 Agustus 2023"),
-            ArtikelData(R.drawable.artikel5, "LazisMu UMS Berikan Beasiswa Hingga Lulus", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
-            ArtikelData(R.drawable.artikel6, "Pengumuman Pendaftaran Pewawancara Seleksi Beasiswa Indonesia Bangkit 2023", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
-            ArtikelData(R.drawable.artikel7, "Pengumuman Pendaftaran Pewawancara Seleksi Beasiswa Indonesia Bangkit 2023", "Oleh : Dispendik Mojokerto", "15 Agustus 2023")
+            Artikell(R.drawable.artike1, "Pentingnya Pendidikan Bagi Masa Depan", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
+            Artikell(R.drawable.artikel2, "8 Cara Membuat Katalog Online untuk Tingkat Bisnis", "Oleh : Redaksi Jagoan Hosting", "15 Agustus 2023"),
+            Artikell(R.drawable.artikel4, "Para Penerima Beasiswa Amanah Bangun Desa Telah Memasuki Tahap Implementasi Proyek", "Oleh : Kompasiana", "15 Agustus 2023"),
+            Artikell(R.drawable.artikel5, "LazisMu UMS Berikan Beasiswa Hingga Lulus", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
+            Artikell(R.drawable.artikel6, "Pengumuman Pendaftaran Pewawancara Seleksi Beasiswa Indonesia Bangkit 2023", "Oleh : Dispendik Mojokerto", "15 Agustus 2023"),
+            Artikell(R.drawable.artikel7, "Pengumuman Pendaftaran Pewawancara Seleksi Beasiswa Indonesia Bangkit 2023", "Oleh : Dispendik Mojokerto", "15 Agustus 2023")
         )
 
         setArtikelData(artikelList)
@@ -82,6 +80,3 @@ class Artikel : AppCompatActivity() {
         }
     }
 }
-
-data class ArtikelData(val imageRes: Int, val title: String, val publisher: String, val date: String)
-
